@@ -9,7 +9,7 @@ const Home = () => {
       <button
         onClick={() =>
           postAuthor({
-            id: "2",
+            id: "1",
             // id: `A-${Date.now()}`,
             name: "John Doe",
             email: "",

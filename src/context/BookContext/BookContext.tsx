@@ -41,9 +41,9 @@ export const BookProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const deleteBook = (id: string) => {
-    const books = books.filter((book) => book.id !== id);
-    localStorage.setItem("books", JSON.stringify(books));
-    setBooks(books);
+    const bookFiltered = books.filter((book) => book.id !== id);
+    localStorage.setItem("books", JSON.stringify(bookFiltered));
+    setBooks(bookFiltered);
   };
 
   return (

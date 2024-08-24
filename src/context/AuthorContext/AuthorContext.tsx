@@ -41,8 +41,9 @@ export const AuthorProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const deleteAuthor = (id: string) => {
-    const author = authors.filter((author) => author.id !== id);
-    localStorage.setItem("authors", JSON.stringify(author));
+    const authorFiltered = authors.filter((author) => author.id !== id);
+    localStorage.setItem("authors", JSON.stringify(authorFiltered));
+    setAuthors(authorFiltered);
   };
 
   return (
