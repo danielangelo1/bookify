@@ -9,6 +9,7 @@ import {
   TableBody,
   TableBodyData,
   TableBodyRow,
+  TableContainer,
   TableHead,
   TableHeadRow,
 } from "./styles";
@@ -24,7 +25,7 @@ const DefaultTable = ({ data }: DefaultTableProps) => {
   const { deleteBook } = useContext(BookContext);
 
   return (
-    <>
+    <TableContainer>
       <Table>
         <TableHead>
           <TableHeadRow>
@@ -62,7 +63,7 @@ const DefaultTable = ({ data }: DefaultTableProps) => {
           ))}
         </TableBody>
       </Table>
-    </>
+    </TableContainer>
   );
 };
 
