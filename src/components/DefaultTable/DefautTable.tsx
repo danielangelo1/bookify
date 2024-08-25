@@ -1,4 +1,4 @@
-import { EyeOpenIcon, Pencil1Icon, TrashIcon } from "@radix-ui/react-icons";
+import { EyeOpenIcon, Pencil1Icon } from "@radix-ui/react-icons";
 import { Author } from "../../types/Author/Author";
 import { Book } from "../../types/Book/Book";
 import { useContext } from "react";
@@ -13,6 +13,7 @@ import {
   TableHead,
   TableHeadRow,
 } from "./styles";
+import DeleteDialog from "../DeleteDialog/DeleteDialog";
 
 interface DefaultTableProps {
   data: Author[] | Book[];
@@ -50,14 +51,15 @@ const DefaultTable = ({ data }: DefaultTableProps) => {
               <Button>
                 <Pencil1Icon width={24} height={24} />
               </Button>
-              <Button
-                onClick={() => {
-                  "author_id" in item
-                    ? deleteBook(item.id)
-                    : deleteAuthor(item.id);
-                }}
-              >
-                <TrashIcon width={24} height={24} />
+              <Button>
+                <DeleteDialog
+                  type={item}
+                  onDelete={
+                    "author_id" in item
+                      ? () => deleteBook(item.id)
+                      : () => deleteAuthor(item.id)
+                  }
+                />
               </Button>
             </TableBodyData>
           </TableBodyRow>
