@@ -19,7 +19,6 @@ export const StyledInput = styled.input`
   box-shadow: 0 0 0 0.1rem #001d4a;
   border-radius: 5px;
   border: none;
-
   &:focus {
     outline: none;
     box-shadow: 0 0 0 0.2rem #001d4a;

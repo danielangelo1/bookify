@@ -4,4 +4,5 @@ export const ActionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+  padding: 10px;
 `;
