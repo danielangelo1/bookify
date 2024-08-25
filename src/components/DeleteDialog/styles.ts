@@ -47,7 +47,7 @@ export const AlertDialogTitle = styled(AlertDialog.Title)`
 
 export const AlertDialogDescription = styled(AlertDialog.Description)`
   margin-bottom: 20px;
-  color: #9a9a9a;
+  color: #333;
   font-size: 15px;
   line-height: 1.5;
 `;

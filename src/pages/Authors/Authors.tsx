@@ -1,6 +1,8 @@
 import { useContext, useEffect } from "react";
 import { AuthorContext } from "../../context/AuthorContext/AuthorContext";
 import DefaultTable from "../../components/DefaultTable/DefautTable";
+import { ActionsContainer } from "../Books/styles";
+import DefaultDialog from "../../components/DefaultDialog/DefaultDialog";
 
 const Authors = () => {
   const { authors, getAuthors, postAuthor } = useContext(AuthorContext);
@@ -11,16 +13,10 @@ const Authors = () => {
 
   return (
     <main style={{ paddingTop: "6rem" }}>
-      <button
-        onClick={() =>
-          postAuthor({
-            id: `A-${Date.now()}`,
-            name: "John Doe",
-          })
-        }
-      >
-        CLICKA
-      </button>
+      <ActionsContainer>
+        <input type="text" placeholder="Search" />
+        <DefaultDialog type="author" />
+      </ActionsContainer>
       {authors.length > 0 ? (
         <DefaultTable data={authors} />
       ) : (

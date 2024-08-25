@@ -7,5 +7,10 @@ export const BookSchema = yup.object().shape({
   id: yup.string(),
   name: yup.string().required(),
   author_id: yup.string().required(),
-  pages: yup.number().positive().integer(),
+  pages: yup
+    .number()
+    .positive()
+    .integer()
+    .nullable()
+    .transform((value) => (isNaN(value) ? null : value)),
 });

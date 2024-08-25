@@ -15,7 +15,7 @@ const Books = () => {
     <main style={{ paddingTop: "6rem" }}>
       <ActionsContainer>
         <input type="text" placeholder="Search" />
-        <DefaultDialog />
+        <DefaultDialog type="book" />
       </ActionsContainer>
       {books.length > 0 ? <DefaultTable data={books} /> : <h1>Loading...</h1>}
     </main>

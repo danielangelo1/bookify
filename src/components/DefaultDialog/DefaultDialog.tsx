@@ -10,9 +10,16 @@ import {
 } from "./styles";
 import BookForm from "../Forms/BookForm/BookForm";
 import { useState } from "react";
+import AuthorForm from "../Forms/AuthorForm/AuthorForm";
 
-const DefaultDialog = () => {
+interface DefaultDialogProps {
+  type: string;
+}
+
+const DefaultDialog = ({ type }: DefaultDialogProps) => {
   const [open, setOpen] = useState(false);
+
+  const texto = type === "book" ? "Livro" : "Autor";
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
@@ -23,9 +30,14 @@ const DefaultDialog = () => {
       <Dialog.Portal>
         <DialogOverlay />
         <DialogContent>
-          <DialogTitle>Adicionar Livro</DialogTitle>
-          <DialogDescription>Crie um novo livro</DialogDescription>
-          <BookForm onBookSubmit={() => setOpen(false)} />
+          <DialogTitle>Adicionar {texto}</DialogTitle>
+          <DialogDescription>Crie um novo {texto}</DialogDescription>
+          {type === "book" ? (
+            <BookForm onBookSubmit={() => setOpen(false)} />
+          ) : (
+            <AuthorForm onAuthorSubmit={() => setOpen(false)} />
+          )}
+
           <Dialog.Close asChild>
             <CloseButton>
               <Cross2Icon />
