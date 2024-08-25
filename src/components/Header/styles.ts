@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem;
   background-color: #001d4a;
   color: #ebe9e9;
-  font-size: 1.5rem;
   position: fixed;
   width: 100%;
   left: 0;
+`;
+
+export const HeaderContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 1.5rem;
 
   a {
     text-decoration: none;
@@ -27,6 +33,10 @@ export const HeaderContainer = styled.header`
   a:hover:after {
     width: 100%;
     transition: width 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
   }
 `;
 

@@ -1,30 +1,18 @@
 import { useContext, useEffect } from "react";
 import DefaultTable from "../../components/DefaultTable/DefautTable";
 import { BookContext } from "../../context/BookContext/BookContext";
+import DefaultDialog from "../../components/DefaultDialog/DefaultDialog";
 
 const Books = () => {
-  const { books, getBooks, postBook } = useContext(BookContext);
+  const { books, getBooks } = useContext(BookContext);
 
   useEffect(() => {
     getBooks();
   }, []);
 
-  console.log(books);
-
   return (
     <main style={{ paddingTop: "6rem" }}>
-      <button
-        onClick={() =>
-          postBook({
-            id: `B-${Date.now()}`,
-            name: "John Doe",
-            author_id: "1",
-            pages: 100,
-          })
-        }
-      >
-        CLICKA
-      </button>
+      <DefaultDialog />
       {books.length > 0 ? <DefaultTable data={books} /> : <h1>Loading...</h1>}
     </main>
   );

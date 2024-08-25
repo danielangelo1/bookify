@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { AuthorContext } from "../../context/AuthorContext/AuthorContext";
 import DefaultTable from "../../components/DefaultTable/DefautTable";
 
@@ -8,8 +8,6 @@ const Authors = () => {
   useEffect(() => {
     getAuthors();
   }, []);
-
-  console.log(authors);
 
   return (
     <main style={{ paddingTop: "6rem" }}>
