@@ -1,7 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon, PlusIcon } from "@radix-ui/react-icons";
 import {
-  Button,
+  CloseButton,
   CreateButton,
   DialogContent,
   DialogDescription,
@@ -9,10 +9,12 @@ import {
   DialogTitle,
 } from "./styles";
 import BookForm from "../Forms/BookForm/BookForm";
+import { useState } from "react";
 
 const DefaultDialog = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <Dialog.Root>
+    <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <CreateButton>
           Criar <PlusIcon />
@@ -22,23 +24,12 @@ const DefaultDialog = () => {
         <DialogOverlay />
         <DialogContent>
           <DialogTitle>Adicionar Livro</DialogTitle>
-          <DialogDescription>Crie um novo Livro</DialogDescription>
-          <BookForm />
-          <div
-            style={{
-              display: "flex",
-              marginTop: 25,
-              justifyContent: "flex-end",
-            }}
-          >
-            <Dialog.Close asChild>
-              <Button>Save changes</Button>
-            </Dialog.Close>
-          </div>
+          <DialogDescription>Crie um novo livro</DialogDescription>
+          <BookForm onBookSubmit={() => setOpen(false)} />
           <Dialog.Close asChild>
-            <Button>
+            <CloseButton>
               <Cross2Icon />
-            </Button>
+            </CloseButton>
           </Dialog.Close>
         </DialogContent>
       </Dialog.Portal>

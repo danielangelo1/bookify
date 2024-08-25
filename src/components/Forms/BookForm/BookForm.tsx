@@ -4,8 +4,20 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { BookSchema } from "../../../schemas/BookSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BookContext } from "../../../context/BookContext/BookContext";
+import {
+  SpanError,
+  StyledButton,
+  StyledFieldset,
+  StyledForm,
+  StyledInput,
+  StyledLabel,
+} from "../styles";
 
-const BookForm = () => {
+interface BookFormProps {
+  onBookSubmit: () => void;
+}
+
+const BookForm = ({ onBookSubmit }: BookFormProps) => {
   const { postBook } = useContext(BookContext);
 
   const {
@@ -24,33 +36,28 @@ const BookForm = () => {
       author_id: data.author_id,
     };
     postBook(completeData);
+    onBookSubmit();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <fieldset className="Fieldset">
-        <label className="Label" htmlFor="name">
-          Name
-        </label>
-        <input className="Input" id="name" {...register("name")} />
-        <span>{errors.name?.message}</span>
-      </fieldset>
-      <fieldset className="Fieldset">
-        <label className="Label" htmlFor="author_id">
-          Author ID
-        </label>
-        <input className="Input" id="author_id" {...register("author_id")} />
-        <span>{errors.author_id?.message}</span>
-      </fieldset>
-      <fieldset className="Fieldset">
-        <label className="Label" htmlFor="pages">
-          Pages
-        </label>
-        <input className="Input" id="pages" {...register("pages")} />
-        <span>{errors.pages?.message}</span>
-      </fieldset>
-      <button type="submit">Submit</button>
-    </form>
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <StyledFieldset>
+        <StyledLabel htmlFor="name">Nome</StyledLabel>
+        <StyledInput id="name" {...register("name")} />
+        <SpanError>{errors.name?.message}</SpanError>
+      </StyledFieldset>
+      <StyledFieldset>
+        <StyledLabel htmlFor="author_id">Autor</StyledLabel>
+        <StyledInput id="author_id" {...register("author_id")} />
+        <SpanError>{errors.author_id?.message}</SpanError>
+      </StyledFieldset>
+      <StyledFieldset>
+        <StyledLabel htmlFor="pages">Páginas</StyledLabel>
+        <StyledInput className="Input" id="pages" {...register("pages")} />
+        <SpanError>{errors.pages?.message}</SpanError>
+      </StyledFieldset>
+      <StyledButton type="submit">Adicionar</StyledButton>
+    </StyledForm>
   );
 };
 

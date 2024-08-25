@@ -21,23 +21,17 @@ export const DialogOverlay = styled(Dialog.Overlay)`
 export const DialogContent = styled(Dialog.Content)`
   background-color: white;
   border-radius: 6px;
-  padding: 25px;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 90vw;
   max-width: 450px;
   max-height: 85vh;
-  margin: 0 auto;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  animation: ${contentShow} 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
-    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  &:focus {
-    outline: none;
-  }
+  padding: 25px;
+  animation: ${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
 `;
 
 export const DialogTitle = styled(Dialog.Title)`
@@ -49,22 +43,7 @@ export const DialogTitle = styled(Dialog.Title)`
 export const DialogDescription = styled(Dialog.Description)`
   color: #666;
   font-size: 0.9rem;
-  margin-bottom: 20px;
-`;
-
-export const Button = styled.button`
-  background-color: #f5f5f5;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  &:hover {
-    background-color: #e5e5e5;
-  }
+  margin-bottom: 10px;
 `;
 
 export const CreateButton = styled.button`
@@ -83,5 +62,29 @@ export const CreateButton = styled.button`
     background-color: #008ff5;
     color: white;
     transition: 0.3s;
+  }
+`;
+
+export const CloseButton = styled.button`
+  font-family: inherit;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    color: #333;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px #001d4a;
   }
 `;
