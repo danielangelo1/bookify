@@ -11,3 +11,13 @@ export const DialogTrigger = styled(Dialog.Trigger)`
     background-color: #ddd;
   }
 `;
+
+export const DialogSubtitle = styled(Dialog.Title)`
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+`;

@@ -8,6 +8,7 @@ export const BookContext = createContext<{
   getBooks: () => void;
   getBook: (id: string) => void;
   deleteBook: (id: string) => void;
+  getAllBooksByAuthor: (author_id: string) => Book[];
 }>({
   book: {} as Book,
   books: [],
@@ -15,6 +16,7 @@ export const BookContext = createContext<{
   getBooks: () => {},
   getBook: () => {},
   deleteBook: () => {},
+  getAllBooksByAuthor: () => [],
 });
 
 export const BookProvider = ({ children }: { children: React.ReactNode }) => {
@@ -46,6 +48,11 @@ export const BookProvider = ({ children }: { children: React.ReactNode }) => {
     setBooks(bookFiltered);
   };
 
+  const getAllBooksByAuthor = (author_id: string) => {
+    const booksByAuthor = books.filter((book) => book.author_id === author_id);
+    return booksByAuthor;
+  };
+
   return (
     <BookContext.Provider
       value={{
@@ -55,6 +62,7 @@ export const BookProvider = ({ children }: { children: React.ReactNode }) => {
         getBooks,
         getBook,
         deleteBook,
+        getAllBooksByAuthor,
       }}
     >
       {children}
