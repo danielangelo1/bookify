@@ -5,7 +5,7 @@ import { ActionsContainer } from "../Books/styles";
 import DefaultDialog from "../../components/DefaultDialog/DefaultDialog";
 
 const Authors = () => {
-  const { authors, getAuthors, postAuthor } = useContext(AuthorContext);
+  const { authors, getAuthors } = useContext(AuthorContext);
 
   useEffect(() => {
     getAuthors();
