@@ -10,12 +10,16 @@ import { Cross2Icon, EyeOpenIcon } from "@radix-ui/react-icons";
 import { Book } from "../../types/Book/Book";
 import { Author } from "../../types/Author/Author";
 import { DialogTrigger } from "./styles";
+import { useContext } from "react";
+import { AuthorContext } from "../../context/AuthorContext/AuthorContext";
 
 interface DetailsModalProps {
   data: Book | Author;
 }
 
 const DetailsModal = ({ data }: DetailsModalProps) => {
+  const { getAuthorName } = useContext(AuthorContext);
+
   const tipo = "author_id" in data ? "livro" : "autor";
 
   const isBook = (data: Book | Author): data is Book => {
@@ -36,10 +40,13 @@ const DetailsModal = ({ data }: DetailsModalProps) => {
           {isBook(data) ? (
             <>
               <DialogDescription>
-                ID Do Autor: {data.author_id}
+                Páginas: {data.pages || "Não informado"}
               </DialogDescription>
               <DialogDescription>
-                Páginas: {data.pages || "Não informado"}
+                <DialogDescription>
+                  Nome do Autor: {getAuthorName(data.author_id)}
+                </DialogDescription>
+                ID Do Autor: {data.author_id}
               </DialogDescription>
             </>
           ) : (

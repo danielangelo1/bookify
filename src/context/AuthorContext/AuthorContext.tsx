@@ -4,10 +4,12 @@ import { Author } from "../../types/Author/Author";
 export const AuthorContext = createContext<{
   author: Author;
   authors: Author[];
+
   postAuthor: (author: Author) => void;
   getAuthors: () => void;
   getAuthor: (id: string) => void;
   deleteAuthor: (id: string) => void;
+  getAuthorName: (id: string) => string | undefined;
 }>({
   author: {} as Author,
   authors: [],
@@ -15,6 +17,7 @@ export const AuthorContext = createContext<{
   getAuthors: () => {},
   getAuthor: () => {},
   deleteAuthor: () => {},
+  getAuthorName: () => "",
 });
 
 export const AuthorProvider = ({ children }: { children: React.ReactNode }) => {
@@ -46,6 +49,12 @@ export const AuthorProvider = ({ children }: { children: React.ReactNode }) => {
     setAuthors(authorFiltered);
   };
 
+  const getAuthorName = (id: string) => {
+    const author = authors.find((author) => author.id === id);
+    console.log(author);
+    return author?.name;
+  };
+
   return (
     <AuthorContext.Provider
       value={{
@@ -55,6 +64,7 @@ export const AuthorProvider = ({ children }: { children: React.ReactNode }) => {
         getAuthors,
         getAuthor,
         deleteAuthor,
+        getAuthorName,
       }}
     >
       {children}
