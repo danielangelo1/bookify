@@ -35,6 +35,10 @@ export const HeaderContent = styled.div`
     transition: width 0.3s;
   }
 
+  .active::after {
+    width: 100%;
+  }
+
   @media (max-width: 768px) {
     font-size: 1.25rem;
   }

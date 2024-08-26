@@ -19,7 +19,7 @@ const Authors = () => {
       {authors.length > 0 ? (
         <DefaultTable data={authors} />
       ) : (
-        <p>Nenhum ator em nossa base, adicione um clicando no botão Criar.</p>
+        <p>Nenhum autor em nossa base, adicione um clicando no botão Criar.</p>
       )}
     </MainContainer>
   );

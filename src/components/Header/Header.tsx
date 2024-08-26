@@ -1,16 +1,29 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { HeaderContainer, HeaderContent, NavMenu } from "./styles";
 
 const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Link to="/">
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/"
+        >
           <h2>Bookify</h2>
-        </Link>
+        </NavLink>
         <NavMenu>
-          <Link to="/books">Livros</Link>
-          <Link to="/authors">Autores</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/books"
+          >
+            Livros
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/authors"
+          >
+            Autores
+          </NavLink>
         </NavMenu>
       </HeaderContent>
     </HeaderContainer>

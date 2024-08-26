@@ -39,7 +39,7 @@ const DetailsModal = ({ data }: DetailsModalProps) => {
                 ID Do Autor: {data.author_id}
               </DialogDescription>
               <DialogDescription>
-                Páginas: {data.pages || "Não Informado"}
+                Páginas: {data.pages || "Não informado"}
               </DialogDescription>
             </>
           ) : (

@@ -100,4 +100,13 @@ export const SearchContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  width: 100%;
+`;
+
+export const TableFooter = styled.div`
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
 `;

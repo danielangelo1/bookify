@@ -12,6 +12,7 @@ import {
   TableBodyData,
   TableBodyRow,
   TableContainer,
+  TableFooter,
   TableHead,
   TableHeadRow,
 } from "./styles";
@@ -78,7 +79,16 @@ const DefaultTable = ({ data }: DefaultTableProps) => {
               </TableBodyData>
             </TableBodyRow>
           ))}
+
+          {filteredData.length === 0 && (
+            <TableBodyRow>
+              <TableBodyData colSpan={Object.keys(data[0]).length + 2}>
+                Nenhum resultado encontrado
+              </TableBodyData>
+            </TableBodyRow>
+          )}
         </TableBody>
+        <TableFooter>Total de registros: {data.length}</TableFooter>
       </Table>
     </TableContainer>
   );

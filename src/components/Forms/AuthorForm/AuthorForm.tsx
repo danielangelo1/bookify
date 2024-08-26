@@ -33,7 +33,7 @@ const AuthorForm = ({ onAuthorSubmit }: AuthorFormProps) => {
     const completeData = {
       id: `A-${Date.now()}`,
       name: data.name,
-      email: data.email || "Não Informado",
+      email: data.email || "Não informado",
     };
     postAuthor(completeData);
     onAuthorSubmit();
