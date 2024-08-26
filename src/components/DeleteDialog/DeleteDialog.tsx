@@ -5,6 +5,7 @@ import {
   AlertDialogDescription,
   AlertDialogOverlay,
   AlertDialogTitle,
+  ButtonContainer,
   CancelButton,
   DeleteButton,
 } from "./styles";
@@ -34,7 +35,7 @@ const DeleteDialog = ({ onDelete, type }: DeleteDialogProps) => {
             Você tem certeza que deseja deletar esse {texto}? Essa ação é
             irreversível.
           </AlertDialogDescription>
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <ButtonContainer>
             <AlertDialog.Cancel asChild>
               <CancelButton style={{ marginRight: 25 }}>Cancelar</CancelButton>
             </AlertDialog.Cancel>
@@ -48,7 +49,7 @@ const DeleteDialog = ({ onDelete, type }: DeleteDialogProps) => {
                 Sim, deletar {texto}
               </DeleteButton>
             </AlertDialog.Action>
-          </div>
+          </ButtonContainer>
         </AlertDialogContent>
       </AlertDialog.Portal>
     </AlertDialog.Root>

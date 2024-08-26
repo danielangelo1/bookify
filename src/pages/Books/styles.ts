@@ -6,3 +6,7 @@ export const ActionsContainer = styled.div`
   margin-bottom: 1rem;
   padding: 10px;
 `;
+
+export const MainContainer = styled.main`
+  padding: 6rem 2rem 2rem 2rem;
+`;

@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import DefaultTable from "../../components/DefaultTable/DefautTable";
 import { BookContext } from "../../context/BookContext/BookContext";
 import DefaultDialog from "../../components/DefaultDialog/DefaultDialog";
-import { ActionsContainer } from "./styles";
+import { ActionsContainer, MainContainer } from "./styles";
 
 const Books = () => {
   const { books, getBooks } = useContext(BookContext);
@@ -12,7 +12,7 @@ const Books = () => {
   }, []);
 
   return (
-    <main style={{ paddingTop: "6rem" }}>
+    <MainContainer>
       <ActionsContainer>
         <DefaultDialog type="book" />
       </ActionsContainer>
@@ -21,7 +21,7 @@ const Books = () => {
       ) : (
         <p>Nenhum livro em nossa base, adicione um clicando no botão Criar.</p>
       )}
-    </main>
+    </MainContainer>
   );
 };
 

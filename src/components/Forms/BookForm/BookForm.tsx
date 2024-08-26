@@ -50,34 +50,36 @@ const BookForm = ({ onBookSubmit }: BookFormProps) => {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <StyledFieldset>
-        <StyledLabel htmlFor="name">Nome</StyledLabel>
-        <StyledInput id="name" {...register("name")} />
-        <SpanError>{errors.name?.message}</SpanError>
-      </StyledFieldset>
       {authors.length > 0 ? (
-        <StyledFieldset>
-          <StyledLabel htmlFor="author_id">Autor</StyledLabel>
-          <StyledSelect id="author_id" {...register("author_id")}>
-            {authors.map((author) => (
-              <option key={author.id} value={author.id}>
-                {author.name}
-              </option>
-            ))}
-          </StyledSelect>
-          <SpanError>{errors.author_id?.message}</SpanError>
-        </StyledFieldset>
+        <>
+          <StyledFieldset>
+            <StyledLabel htmlFor="name">Nome</StyledLabel>
+            <StyledInput id="name" {...register("name")} />
+            <SpanError>{errors.name?.message}</SpanError>
+          </StyledFieldset>
+          <StyledFieldset>
+            <StyledLabel htmlFor="author_id">Autor</StyledLabel>
+            <StyledSelect id="author_id" {...register("author_id")}>
+              {authors.map((author) => (
+                <option key={author.id} value={author.id}>
+                  {author.name}
+                </option>
+              ))}
+            </StyledSelect>
+            <SpanError>{errors.author_id?.message}</SpanError>
+          </StyledFieldset>
+          <StyledFieldset>
+            <StyledLabel htmlFor="pages">Páginas</StyledLabel>
+            <StyledInput className="Input" id="pages" {...register("pages")} />
+            <SpanError>{errors.pages?.message}</SpanError>
+          </StyledFieldset>
+          <StyledButton type="submit">Adicionar</StyledButton>
+        </>
       ) : (
         <SpanError>
           Não tem nenhum autor na nossa base dados :( Crie um!
         </SpanError>
       )}
-      <StyledFieldset>
-        <StyledLabel htmlFor="pages">Páginas</StyledLabel>
-        <StyledInput className="Input" id="pages" {...register("pages")} />
-        <SpanError>{errors.pages?.message}</SpanError>
-      </StyledFieldset>
-      <StyledButton type="submit">Adicionar</StyledButton>
     </StyledForm>
   );
 };

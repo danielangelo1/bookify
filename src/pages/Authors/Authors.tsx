@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { AuthorContext } from "../../context/AuthorContext/AuthorContext";
 import DefaultTable from "../../components/DefaultTable/DefautTable";
-import { ActionsContainer } from "../Books/styles";
+import { ActionsContainer, MainContainer } from "../Books/styles";
 import DefaultDialog from "../../components/DefaultDialog/DefaultDialog";
 
 const Authors = () => {
@@ -12,7 +12,7 @@ const Authors = () => {
   }, []);
 
   return (
-    <main style={{ paddingTop: "6rem" }}>
+    <MainContainer>
       <ActionsContainer>
         <DefaultDialog type="author" />
       </ActionsContainer>
@@ -21,7 +21,7 @@ const Authors = () => {
       ) : (
         <p>Nenhum ator em nossa base, adicione um clicando no botão Criar.</p>
       )}
-    </main>
+    </MainContainer>
   );
 };
 

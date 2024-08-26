@@ -77,3 +77,18 @@ export const CancelButton = styled.button`
     background-color: #bdbdbd;
   }
 `;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    position: absolute;
+    margin-top: -6px;
+  }
+`;

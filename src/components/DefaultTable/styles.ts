@@ -76,11 +76,10 @@ export const Button = styled.button`
 
 export const StyledInput = styled.input`
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.6rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   border: 1px solid #ddd;
-  position: relative;
 
   &:focus {
     outline: none;
@@ -101,5 +100,4 @@ export const SearchContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-  position: relative;
 `;

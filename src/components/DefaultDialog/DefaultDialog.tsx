@@ -24,7 +24,7 @@ const DefaultDialog = ({ type }: DefaultDialogProps) => {
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <CreateButton>
-          Criar <PlusIcon />
+          Criar {texto} <PlusIcon />
         </CreateButton>
       </Dialog.Trigger>
       <Dialog.Portal>

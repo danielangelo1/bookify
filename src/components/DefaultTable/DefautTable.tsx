@@ -46,7 +46,7 @@ const DefaultTable = ({ data }: DefaultTableProps) => {
         <MagnifyingGlassIcon
           style={{
             position: "absolute",
-            right: "1rem",
+            right: "3rem",
             transform: "translateY(-50%)",
             pointerEvents: "none",
           }}
