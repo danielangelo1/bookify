@@ -40,7 +40,7 @@ const BookForm = ({ onBookSubmit }: BookFormProps) => {
     const completeData = {
       id: `B-${Date.now()}`,
       name: data.name,
-      pages: data.pages,
+      pages: data.pages || 0,
       author_id: data.author_id,
     };
     postBook(completeData);

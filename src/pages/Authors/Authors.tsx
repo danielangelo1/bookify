@@ -14,13 +14,12 @@ const Authors = () => {
   return (
     <main style={{ paddingTop: "6rem" }}>
       <ActionsContainer>
-        <input type="text" placeholder="Search" />
         <DefaultDialog type="author" />
       </ActionsContainer>
       {authors.length > 0 ? (
         <DefaultTable data={authors} />
       ) : (
-        <h1>Loading...</h1>
+        <p>Nenhum ator em nossa base, adicione um clicando no botão Criar.</p>
       )}
     </main>
   );

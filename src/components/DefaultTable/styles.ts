@@ -73,3 +73,32 @@ export const Button = styled.button`
     background-color: #ddd;
   }
 `;
+
+export const StyledInput = styled.input`
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  position: relative;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #333;
+  }
+
+  &:hover {
+    border: 1px solid #333;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+`;
+
+export const SearchContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+`;
