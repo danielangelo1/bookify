@@ -30,7 +30,7 @@ const DefaultTable = ({ data }: DefaultTableProps) => {
 
   const filteredData = data.filter((item) =>
     Object.values(item).some((value) =>
-      value.toString().toLowerCase().includes(search.toLowerCase()),
+      value?.toString().toLowerCase().includes(search.toLowerCase()),
     ),
   );
 
@@ -47,7 +47,6 @@ const DefaultTable = ({ data }: DefaultTableProps) => {
           style={{
             position: "absolute",
             right: "1rem",
-            top: "50%",
             transform: "translateY(-50%)",
             pointerEvents: "none",
           }}
@@ -80,8 +79,8 @@ const DefaultTable = ({ data }: DefaultTableProps) => {
                     type={item}
                     onDelete={
                       "author_id" in item
-                        ? () => deleteBook(item.id)
-                        : () => deleteAuthor(item.id)
+                        ? () => deleteBook(item.id ?? "")
+                        : () => deleteAuthor(item.id ?? "")
                     }
                   />
                 </Button>

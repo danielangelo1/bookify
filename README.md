@@ -3,8 +3,6 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/danielangelo1/bookify?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/danielangelo1/bookify?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/danielangelo1/bookify?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/danielangelo1/bookify?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/danielangelo1/bookify?style=for-the-badge)
 
 <!-- <img src="imagem.png" alt="Exemplo imagem"> -->
 
@@ -19,7 +17,7 @@
 - [Radix UI](https://www.radix-ui.com/)
 - [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
 - [React Hook Form](https://react-hook-form.com/)
-- [Yup]
+- [Yup](https://www.npmjs.com/package/yup)
 
 ## 🚀 Instalando
 

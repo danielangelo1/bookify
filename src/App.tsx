@@ -9,7 +9,7 @@ function App() {
     <AuthorProvider>
       <BookProvider>
         <Router />
-        <ToastContainer />
+        <ToastContainer autoClose={1000} />
       </BookProvider>
     </AuthorProvider>
   );

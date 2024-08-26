@@ -12,5 +12,7 @@ export const BookSchema = yup.object().shape({
     .positive()
     .integer()
     .nullable()
-    .transform((value) => (isNaN(value) ? null : value)),
+    .transform((value, originalValue) =>
+      String(originalValue).trim() === "" ? null : value,
+    ),
 });
