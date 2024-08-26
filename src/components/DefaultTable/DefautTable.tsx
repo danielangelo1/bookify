@@ -17,7 +17,6 @@ import {
 } from "./styles";
 import DeleteDialog from "../DeleteDialog/DeleteDialog";
 import DetailsModal from "../DetailsModal/DetailsModal";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 interface DefaultTableProps {
   data: Author[] | Book[];
@@ -42,14 +41,6 @@ const DefaultTable = ({ data }: DefaultTableProps) => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Pesquisar"
-        />
-        <MagnifyingGlassIcon
-          style={{
-            position: "absolute",
-            right: "3rem",
-            transform: "translateY(-50%)",
-            pointerEvents: "none",
-          }}
         />
       </SearchContainer>
       <Table>
