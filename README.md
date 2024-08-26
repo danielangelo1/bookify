@@ -8,6 +8,9 @@
 
 > Projeto de um sistema de gerenciamento de livros e autores.
 
+#Link do projeto
+[Bookify](https://bookify-nine-theta.vercel.app/)
+
 ## Tecnologias utilizadas
 
 - [TypeScript](https://www.typescriptlang.org/)
@@ -37,4 +40,5 @@ npm install
 
 ```
 npm run dev
+
 ```

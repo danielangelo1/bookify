@@ -43,7 +43,9 @@ const AuthorForm = ({ onAuthorSubmit }: AuthorFormProps) => {
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <StyledFieldset>
-        <StyledLabel htmlFor="name">Nome</StyledLabel>
+        <StyledLabel htmlFor="name">
+          Nome <span style={{ color: "red" }}>*</span>
+        </StyledLabel>
         <StyledInput id="name" {...register("name")} />
         <SpanError>{errors.name?.message}</SpanError>
       </StyledFieldset>

@@ -53,12 +53,16 @@ const BookForm = ({ onBookSubmit }: BookFormProps) => {
       {authors.length > 0 ? (
         <>
           <StyledFieldset>
-            <StyledLabel htmlFor="name">Nome</StyledLabel>
+            <StyledLabel htmlFor="name">
+              Nome <span style={{ color: "red" }}>*</span>
+            </StyledLabel>
             <StyledInput id="name" {...register("name")} />
             <SpanError>{errors.name?.message}</SpanError>
           </StyledFieldset>
           <StyledFieldset>
-            <StyledLabel htmlFor="author_id">Autor</StyledLabel>
+            <StyledLabel htmlFor="author_id">
+              Autor <span style={{ color: "red" }}>*</span>
+            </StyledLabel>
             <StyledSelect id="author_id" {...register("author_id")}>
               {authors.map((author) => (
                 <option key={author.id} value={author.id}>
